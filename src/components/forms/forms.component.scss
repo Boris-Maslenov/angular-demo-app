@@ -1,0 +1,48 @@
+@use "@angular/material" as mat;
+
+.forms-wrap {
+  padding: 50px;
+}
+
+.form {
+  min-height: 100px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 50px;
+}
+
+.field {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.field > * {
+  flex: 1 0 0%;
+  max-width: 200px;
+}
+
+.text-error {
+  color: red;
+}
+
+// поменять цвет на кнопке это отдельный вид искусства
+.submit-button {
+  @include mat.fab-overrides(
+    (
+      container-color: #16a34a,
+      foreground-color: #ffffff,
+      container-shape: 12px,
+
+      disabled-state-container-color: #d1d5db,
+      disabled-state-foreground-color: #6b7280,
+    )
+  );
+}
+
+// что бы поменять цвет нужно ппц
+// mat-flat-button    -> filled-* tokens
+// mat-raised-button  -> protected-* tokens
+// mat-stroked-button -> outlined-* tokens
+// mat-button         -> text-* tokens
+// mat-fab            -> mat.fab-overrides(...)

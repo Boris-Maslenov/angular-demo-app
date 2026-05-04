@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+input {
+  height: 44px;
+  padding: 0 14px;
+
+  font-size: 15px;
+  color: #111827;
+
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.t-text {
+  color: #cdcdcd;
+  margin: 20px;
+  display: block;
+}

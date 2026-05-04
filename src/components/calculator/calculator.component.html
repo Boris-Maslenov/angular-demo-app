@@ -1,0 +1,20 @@
+<div class="calculator">
+  <h2>calculator app</h2>
+
+  <div class="calculator__body">
+    <input class="calculator__input" type="text" [(ngModel)]="a" />
+    <select [(ngModel)]="operator" class="field__select">
+      @for (operator of operators; track operator) {
+        <option [value]="operator">{{ operator }}</option>
+      }
+    </select>
+
+    <input class="calculator__input" type="text" [(ngModel)]="b" />
+
+    <div class="calculator__result">
+      <span>Результат: {{ c }}</span>
+    </div>
+
+    <button (click)="calc()" mat-fab extended>Рассчитать</button>
+  </div>
+</div>

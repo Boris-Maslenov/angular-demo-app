@@ -1,0 +1,15 @@
+.user-card {
+  --mdc-elevated-card-container-color: #ffffff;
+  color: #111827;
+  margin-bottom: 30px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,32 @@
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 0;
+  width: 100%;
+}
+
+.header-nav a[mat-list-item] {
+  border-radius: 8px;
+  width: auto;
+  flex: 0 0 auto;
+  min-width: max-content;
+}
+
+.active-link {
+  font-weight: 600;
+  color: green;
+  --mdc-list-list-item-label-text-color: green;
+  --mdc-list-list-item-hover-label-text-color: green;
+  --mdc-list-list-item-focus-label-text-color: green;
+}
+
+.mdc-list-item__primary-text {
+  color: black !important;
+}
+
+.header-nav {
+  --mdc-list-list-item-label-text-color: #000;
+  --mdc-list-list-item-hover-label-text-color: #000;
+  --mdc-list-list-item-focus-label-text-color: #000;
+}

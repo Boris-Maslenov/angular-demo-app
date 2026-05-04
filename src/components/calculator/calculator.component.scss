@@ -1,0 +1,86 @@
+@use "@angular/material" as mat;
+
+.calculator {
+  border: 1px solid black;
+  padding: 50px;
+}
+
+.calculator__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calculator__result {
+  display: flex;
+  justify-content: center;
+}
+
+.field__select {
+  // width: 100%;
+  height: 44px;
+  padding: 0 40px 0 14px;
+
+  font-size: 15px;
+  color: #111827;
+
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  outline: none;
+  cursor: pointer;
+
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #6b7280 50%),
+    linear-gradient(135deg, #6b7280 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 18px,
+    calc(100% - 13px) 18px;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.field__select:hover {
+  border-color: #9ca3af;
+}
+
+.field__select:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
+}
+
+.field__select.ng-invalid.ng-touched {
+  border-color: #ef4444;
+}
+
+.field__select.ng-invalid.ng-touched:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+}
+
+.field__select:disabled {
+  color: #9ca3af;
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+button {
+  @include mat.fab-overrides(
+    (
+      container-color: #16a34a,
+      foreground-color: #ffffff,
+      container-shape: 12px,
+
+      disabled-state-container-color: #d1d5db,
+      disabled-state-foreground-color: #6b7280,
+    )
+  );
+}

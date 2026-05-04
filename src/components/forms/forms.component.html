@@ -1,0 +1,89 @@
+<div class="forms-wrap">
+  <form class="form" [formGroup]="formDefault" (ngSubmit)="onSubmitForm1()">
+    <div class="field">
+      <label for="login">Login</label>
+      <input
+        id="login"
+        type="text"
+        formControlName="login"
+        [class.error]="isInvalid('login')"
+      />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="text"
+        formControlName="email"
+        [class.error]="isInvalid('email')"
+      />
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="text"
+        formControlName="password"
+        [class.error]="isInvalid('password')"
+      />
+    </div>
+    <button
+      class="submit-button"
+      mat-fab
+      extended
+      type="submit"
+      [disabled]="formDefault.invalid"
+    >
+      Отправить форму 1
+    </button>
+  </form>
+
+  <form class="form" [formGroup]="formFromBuilder" (ngSubmit)="onSubmitForm2()">
+    <div class="field">
+      <input id="name" type="text" formControlName="name" placeholder="name" />
+      @if (
+        !formFromBuilder.controls.name.valid &&
+        formFromBuilder.controls.name.touched &&
+        formFromBuilder.controls.name.errors?.["required"]
+      ) {
+        <span class="text-error">Поле должно быть заполнено</span>
+      }
+    </div>
+    <div class="field">
+      <input
+        id="phone"
+        type="text"
+        formControlName="phone"
+        placeholder="phone"
+      />
+      @if (
+        !formFromBuilder.controls.phone.valid &&
+        formFromBuilder.controls.phone.touched
+      ) {
+        <span class="text-error">Не верный номер</span>
+      }
+    </div>
+    <div class="field">
+      <mat-autocomplete #auto="matAutocomplete">
+        @for (option of options; track option) {
+          <mat-option [value]="option">{{ option }}</mat-option>
+        }
+      </mat-autocomplete>
+      <input
+        type="text"
+        placeholder="Framework"
+        matInput
+        formControlName="framework"
+        [matAutocomplete]="auto"
+      />
+    </div>
+    <button
+      class="submit-button"
+      mat-fab
+      extended
+      [disabled]="formFromBuilder.invalid"
+    >
+      Отправить форму 2
+    </button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<span class="t-text">Изучение азов Ngrx и понятия Signal в Angular</span>
+
+<button mat-fab extended id="increment" (click)="increment()">Increment</button>
+<button mat-fab extended id="decrement" (click)="decrement()">Decrement</button>
+<button class="submit-button" mat-fab extended id="reset" (click)="reset()">
+  Reset Counter
+</button>
+<button class="submit-button" mat-fab extended (click)="setRandom()">
+  Set Random
+</button>
+
+<br />
+<br />
+
+<div>Current Count: {{ count() }}</div>

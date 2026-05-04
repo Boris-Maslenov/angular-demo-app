@@ -1,0 +1,29 @@
+<span class="t-text"
+  >Изучение ngrx + rxjs (rxMethod), знакомство с операторами debounceTime,
+  distinctUntilChanged, switchMap, tap.></span
+>
+
+<div class="content-block">
+  <div class="content-block__inner">
+    <h3>Поиск товаров</h3>
+    <input
+      type="text"
+      placeholder="Введите название товара"
+      matInput
+      #query
+      (input)="productsStore.searchProducts(query.value)"
+    />
+
+    <div class="products-list">
+      @for (product of productsStore.products(); track product.id) {
+        <div class="product">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
+          <img src="{{ product.thumbnail }}" alt="{{ product.title }}" />
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- (input)="productsStore.searchProducts($any($event.target).value)" -->
