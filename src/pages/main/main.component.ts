@@ -7,5 +7,6 @@ import { MyDirective } from '../../directive/my-directive.directive';
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
   imports: [Calculator, MyDirective],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent {}
