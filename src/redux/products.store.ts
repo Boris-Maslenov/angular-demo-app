@@ -77,7 +77,12 @@ export const ProductsStore = signalStore(
                 });
               }),
               catchError((error) => {
-                console.log('catchError', error);
+                console.log('error', error);
+                patchState(store, {
+                  loading: false,
+                  error: 'Не удалось загрузить товары',
+                });
+
                 return EMPTY;
               }),
             );

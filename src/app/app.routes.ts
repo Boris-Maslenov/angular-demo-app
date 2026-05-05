@@ -37,4 +37,11 @@ export const routes: Routes = [
       import('../pages/products/produts.component').then((m) => m.ProductsPage),
     canActivate: [() => false],
   },
+  {
+    path: 'something',
+    loadComponent: () =>
+      import('../pages/something/something.component').then(
+        (m) => m.SomethingPage,
+      ),
+  },
 ];

@@ -43,6 +43,14 @@
   </a>
   <a
     mat-list-item
+    routerLink="/something"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Something page
+  </a>
+  <a
+    mat-list-item
     routerLink="/product"
     routerLinkActive="active-link"
     [routerLinkActiveOptions]="{ exact: true }"
